@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+</head>
+<body>
+	
+	<div class="container top" style="margin-top:2.3%;">
+
+		<div class="row text-center">
+			
+			<div class="col-md-6 col-lg-6 col-12 text-center">
+				<img  src="img/logo.png"><br><br>
+				<h3 class="main_2r">Create an Account</h3>
+				<img src="img/main_img.png" style="max-width: 60%; max-height: 80%;">
+				<h3 class="main_2" style="font-size: 20px; ">Create an Account</h3> 
+				<h3 class="main_3" style="font-size: 15px; color: #AAA6BC; margin-top: 15px;" >We believe that language shouldn’t hinder anyone’s <br> business prospects. That is why we have integrated</h3>
+			</div>
+
+
+			<div class="col-md-6 col-lg-6 col-12 text-center h">
+			 <!----------------------------------------------------------------------------------------- -->
+			 <form method="POST" action="">
+			
+				<div class="signup_step1">
+					<h4>Your ID</h4>
+				<img src="img/dot.png" class="img-fluid"> 
+				
+				<p style="margin-right:16%;" id="resph" class="res_1">Enter Phone Number</p> 				
+				<input type="text" id="phn" name="phone" class="inp_1" style="margin-top: -10px;"><span style="font-size: 8px; width: 15px; height: 15px; margin-left: -25px;" id="vv1"></span><br>
+				<p id="in" style="color: red; margin-left: 10px;">[Enter valid mobile number]</p>
+				<button id="b1" style="margin-top: 30px; outline : none !important; box-shadow: none; margin-left: 5%; padding-right: 20px;" type="button" class="btn btn-primary">Proceed </button>
+			<div id="otp1"> 
+				<button  id="tog" style="margin-top: 20px; background-color: #808080 !important; margin-left: 5%;  padding-right: 20px;" type="button" class="btn btn-primary">Send OTP</button>
+				<div id="reguser">
+					<p id="k" style="color: #3B325F; margin-top: 28px; padding-right:16%">Enter Your Password</p>
+					<input type="password" name="password" id="regpass1"  class="inp_1" style=" margin-top: -10px; margin-left: 25px;"> <br>
+					<p id="cp" style="color: red; text-align: center;">[Invalid credentials]</p>
+				    <button onclick="checkpass()" id="btn11" style="margin-top: 30px; outline : none !important; box-shadow: none;  margin-left: 5%; padding-right: 20px;" type="button" class="btn btn-primary">Proceed <span id="mn" style="font-size: 8px; width: 18px; height:18px;"></span></button>
+				</div>
+			</div> <br>
+			<div id="otp2">
+				<p id="del" style="padding-right:5%;" class="res_2">Enter OTP</p>
+				<div style="margin-left: 25px; margin-top: -10px;">
+				<input id="otp11" type="text"  maxlength="1" name="id1" class="inp_2 j">
+				<input id="otp22" type="text"  maxlength="1" name="id2" class="inp_2 j ">
+				<input id="otp33" type="text"  maxlength="1" name="id3" class="inp_2 j ">
+				<input id="otp44" type="text"  maxlength="1" name="id4" class="inp_2 j ">
+			</div>
+			
+				<div id="un">
+				<p style="margin-top: 5px; color: #AAA6BC;"></p>Resending code in <span id="countdown"></span> sec</p>
+			    </div>
+				<div id="up1">
+				<p style="margin-top: 2px; color: #AAA6BC;">Resend OTP</p>
+				<p style="color: #AAA6BC;">Or</p>
+				<p style="margin-top: 2px; color: #AAA6BC;">Call Now</p>
+			    </div>
+				<button id="btn1" style="margin-top: 30px; margin-left: 5%;padding-right: 20px;" type="button" class="btn btn-primary">Proceed</button>
+			</div>
+	            <!-- <button id="btn1" style="margin-top: 50px;" type="button" class="btn btn-primary">Next</button> -->
+				<p style="margin-top: 5px; color: #AAA6BC;">Already Have an Account? <a style="color:#E9B640; " href="#"><b>Login</b></a></p>
+				
+			
+				</div>
+
+			<!----------------------------------------------------------------------------------------- -->
+
+					<div class="signup_step2">
+						<h4>More about you</h4>
+				<img src="img/dot1.png" class="img-fluid"> 
+				<div class="row">
+					<div class="col-md-6">
+						<span style="color: #3B325F; margin-right:50%;">Choose Category</span>
+							<select id="profession" name="profession_inp"  class="inp1_12"></select>
+					</div>
+					<div class="col-md-6">
+						<span id="resnm" style="color: #3B325F; margin-right: 80%;">Name</span>
+						<input type="text" name="username" id="username"  class="inp1_12">
+						<h6 style="color: red; font-size: small; text-align: left;" id="nmerr">[Name is required]</h6>
+					
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 8px;">
+					<div class="col-md-6">
+						<span id="k2" style="color: #3B325F; margin-right: 50%;">Company Email</span>
+						<input type="text" name="email" id="email"   class="inp1_12">
+						<h6 style="color: red;font-size: small; text-align: left;" id="emerr">[Enter valid email]</h6>
+					</div>
+					<div class="col-md-6">
+						<span id="k3" style="color: #3B325F; margin-right: 50%;">Company Name</span>
+						<input type="text" name="company_name" id="company_name"  class="inp1_12">
+						<h6 style="color: red; font-size: small; text-align: left;" id="cerr">[Company name is required]</h6>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 8px;">
+					<div class="col-md-12">
+						<span id="k4" style="color: #3B325F; margin-right:88%;">Address</span>
+						<input type="text" name="address" id="address"   class="inp1_12" >
+						<h6 style="color: red; font-size: small; text-align: left;" id="aerr">[Address is required]</h6>
+					</div>
+					
+				</div>
+
+
+				<div class="row" style="margin-top: 8px;">
+					<div class="col-md-6">
+						<span id="vv11"  style="color: #3B325F; margin-right: 75%;">Pincode</span>
+						<input type="text" name="pincode" id="pincode"  class="inp1_12">
+					</div>
+					<div class="col-md-6">
+						<span id="k5" style="color: #3B325F; margin-right: 78%;">State</span>
+						<input type="text" id="state" name="state" readonly  class="inp1_12">
+					</div>
+				</div>
+
+
+				
+				<div class="row hide" style="margin-top: 8px;">
+					<div class="col-md-6">
+						<span id="k7" style="color: #3B325F; margin-right: 69%;">Password</span>
+						<input type="password" name="password" id="pass1"   class="inp1_12">
+						<h6 style="color: red; font-size: small; text-align: left;" id="p1err">[Should contain 8 char and 1 letter and one number and one special character]</h6>
+
+					</div>
+					<div class="col-md-6">
+						<span id="k8" style="color: #3B325F; margin-right:40%;">Confirm Password</span><span id="sp"><i class="fa fa-check-square" style="font-size:16px; color: green;"></i></span>
+						<input type="password" name="id" id="pass2"  class="inp1_12">
+						 <span id="kl" toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password" ></span>
+						 <h6 style="color: red; font-size: small; text-align: left; " id="p2err">[Password didt match]</h6>
+					</div>
+					
+					
+				</div>
+				<div class="row" style="margin-top: 8px;">
+					<div class="col-md-12">
+						<span id="ar" style="color: #3B325F; margin-right:91%;">Area</span>
+							<select id="area" name="area"  class="inp1_12"></select><span id="vv" style="font-size: 8px; width:15px; height:15px; margin-left: -15px;"></span>
+					</div>
+
+				</div>
+			<button type="button"   id="btn2" class="btn btn-primary" style="margin-top: 15px;">Next</button>
+				<p style="margin-top: 5px; color: #AAA6BC;">Already Have an Account? <a style="color:#E9B640; " href="#"><b>Login</b></a></p>
+
+				</div>
+
+				<!----------------------------------------------------------------------------------------- -->
+				<div class="signup_step3">
+					<h4>Additional info</h4>
+				<img src="img/dot2.png" class="img-fluid"> 
+					<div class="row" style="margin-top: 30px;">
+							<div class="col-md-6">
+								<span id="tt" style="color: #3B325F; margin-right:40%;">Add Title <span style="font-size: small;">(Optional)</span></span>
+									<input type="text" required name="title" class="inp1_12">
+							</div>
+							<div class="col-md-6">
+								<span style="color: #3B325F; margin-right:54%;">Profile image</span>
+								<input type="file" name="avatar"  class="inp1_12">
+								<!-- <button class="nh" type="submit">Browse</button> -->
+							</div>
+					</div>
+
+					<div class="row" style="margin-top: 30px;">
+						<div class="col-md-6 z  ">
+							<span style="color: #3B325F; margin-right:43%;">Work Description</span>
+							<!-- <input type="textarea" name="work_decp" id="wrkdesp" required  style="width: 95%; height: 80%;" class="inp1_12 "> -->
+							<textarea  name="work_decp" id="wrkdesp" required  style="width: 95%; height: 80%;" class="inp1_12 "></textarea>
+					    </div>
+					    <div class="col-md-6">
+							<span id="tt1" style="color: #3B325F; margin-right:31%;">Cover image <span style="font-size: small;">(Optional)</span></span>
+							<input type="file" name="cover_image"  class="inp1_12">
+							<!-- <button class="nh" type="submit">Browse</button> -->
+		                        <div style="margin-top: 10px;">
+									<span style="color: #3B325F; margin-right: 60%;">Work Proof</span>
+									<input type="file" name="work_proff"  class="inp1_12">
+									<!-- <button class="nh" type="submit">Browse</button> -->
+								</div>
+					   </div>
+					  
+					   <input style="display: none;" name="dis" type="text" id="district">
+
+					</div>
+				</form>
+				<button type="submit" class="btn btn-primary bplz" style="margin-top: 30px;">Next</button>
+				<p style="margin-top: 5px; color: #AAA6BC;">Already Have an Account? <a style="color:#E9B640; " href="#"><b>Login</b></a></p>
+				</div>
+
+
+				<!----------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+			</div>
+
+
+		</div>
+	</div>
+
+
+<script>
+fetch("https://test.1ounce.in/connect/professionapi/")
+.then(function(res){
+return res.json()
+})
+.then(function(data){
+	console.log(data)
+	result(data)
+})
+.catch(function(err){
+	console.log("Something Wrong With the api Call"+err)
+})
+function result(data){
+	let options="";
+	professions = data;
+	for(let i=0;i<professions.results.length;i++){
+	options += `<option value="${professions.results[i].id}">${professions.results[i].title}</option>`
+
+}
+    document.getElementById("profession").innerHTML = options;
+}
+
+</script>
+
+<script>
+	$(document).ready(function() {
+		$("#pincode").on("input", function() {
+		   let inp= $("#pincode").val()
+		   if(inp.length==6) {
+			$('#vv').addClass('spinner-border text-warning');
+			fetch(`https:/test.1ounce.in/common/pincode/${inp}/`)
+			.then(function(res){
+				$('#vv').removeClass('spinner-border text-warning');
+			 return res.json()
+			})
+			.then(function(data){
+				
+			console.log(data)
+			let options="";
+			areas = data;
+			for(let i=0;i<areas.results.length;i++){
+			options += `<option value="${areas.results[i].id}">${areas.results[i].area}</option>`
+		   
+			}
+		   document.getElementById("area").innerHTML = options;
+		   document.getElementById("state").value = `${areas.results[0].state}`;
+		   document.getElementById("district").value = `${areas.results[0].district}`;
+
+
+			})
+			.catch(function(err){
+				alert("Please Enter Valid Pin Code")
+			})
+			
+			
+	
+		} 
+		})
+	})
+</script>
+
+
+
+
+
+
+
+
+<script>
+	$(document).ready(function(){
+	
+	 	$("#otp2").hide()
+		 $("#tog").click(function(){
+			$("#otp2").show()
+		 })
+	
+	});
+	
+</script>
+
+<script>
+	$(document).ready(function(){
+		document.getElementById("tog").disabled = true;
+		$("#phn").on("input", function() {
+			let inp= $("#phn").val()
+			if(inp.length==10){
+				document.getElementById("tog").disabled = false;
+				$("#tog").css("background-color", "red");
+			} else {
+				document.getElementById("tog").disabled = true;
+			}
+
+		})
+	 	
+	
+	});
+	
+</script>
+
+
+
+<script>
+			$(document).ready(function(){
+				$("#tog").click(function() {
+					$("#tog").hide()
+					$("#up1").hide()
+
+					
+				})
+
+			})
+</script>
+
+
+<script>
+		$(document).ready(function(){
+			$("#tog").click(function() {
+				var seconds = 30;
+                var countdown = setInterval(function() {
+                seconds--;
+                document.getElementById("countdown").textContent = seconds;
+                if (seconds <= 0) {
+					clearInterval(countdown);
+					$("#up1").show()
+			        $("#un").hide()
+
+					}
+             }, 1000);
+
+
+			})
+		})
+ 
+</script>
+
+<script>
+		$(document).ready(function() {
+		$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+		event.preventDefault();
+		return false;
+		}
+	});
+	});
+
+</script>
+
+<script>
+	$(document).ready(function() {
+	document.getElementById("btn1").disabled = true;
+	$(".j").on("keypress", function(e){
+    $(this).next().trigger("focus");
+	document.getElementById("btn1").disabled = false;
+  
+  
+})
+
+	})
+</script>
+
+
+
+<script>
+
+		$("#nmerr").hide();
+		$("#emerr").hide();
+		$("#cerr").hide();
+		$("#aerr").hide();
+		$("#p1err").hide()
+		$("#p2err").hide()
+		$("#sp").hide()
+
+
+
+		$("#username").focusout(function(){
+            
+            var fname = $("#username").val().length;
+            if (fname <=0) {
+				$("#nmerr").show();
+
+            } else {
+				$("#nmerr").hide();
+		
+            }
+		 });
+		 
+		 $("#email").focusout(function(){
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#email").val();
+            if (pattern.test(email) && email !== '') {
+				$("#emerr").hide();
+            } else {
+				$("#emerr").show();
+              //alert("Enter Valid email or email cannot be empty")
+              
+			}
+		})
+
+		$("#pass1").focusout(function(){
+            var pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            var pass1 = $("#pass1").val();
+            if (pattern.test(pass1) && pass1 !== '') {
+				$("#p1err").hide();
+            } else {
+				$("#p1err").show();
+              //alert("Enter Valid email or email cannot be empty")
+              
+			}
+		})
+
+
+
+		$("#pass2").focusout(function(){
+			var password = $("#pass1").val();
+            var retype_password = $("#pass2").val();
+            if (password !== retype_password) {
+				$("#p2err").show()
+				$("#sp").hide()
+            } else {
+				$("#p2err").hide()
+				$("#sp").show()
+
+			}
+		})
+
+		$("#phn").focusout(function() {
+			 var pattern = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/;
+			var phnno = $("#phn").val();
+			if(!pattern.test(phnno)){
+				$("#cerr").show();
+				document.getElementById("tog").disabled = true;
+			}
+
+		})
+
+		$("#company_name").focusout(function() {
+			var len = $("#company_name").val().length
+			if(len<=0){
+				$("#cerr").show();
+				//alert("Please Enter Company Name")
+			}else {
+				$("#cerr").hide();
+			}
+
+		})
+
+		$("#address").focusout(function() {
+			var len = $("#address").val().length
+			if(len<=0){
+				$("#aerr").show();
+				//alert("Please Enter Address")
+			} else {
+				$("#aerr").hide();
+			}
+
+		})
+
+
+
+</script>
+
+<script>
+	$(document).on('click', '.toggle-password', function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    
+    var input = $("#pass2,#pass1");
+    input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+  });
+</script>
+
+
+<script>
+	$(document).ready(function() {
+		document.getElementById("btn2").disabled = true;
+		$("#username,#email,#company_name,#pincode,#address").on("input", function() {
+	    var name = $("#username").val().length;
+		var email = $("#email").val().length;
+		var cn = $("#company_name").val().length;
+		var pincode = $("#pincode").val().length;
+		var address = $("#address").val().length;
+		// var pass1 = $("#pass1").val().length;
+		// var pass2 = $("#pass2").val().length;
+        
+	
+		if(name<=0 || email<=0 || cn<=0 || pincode<=0 ||address<=0){
+			document.getElementById("btn2").disabled = true;
+		 } else{
+			document.getElementById("btn2").disabled = false;
+		 }
+		})
+	})
+</script>
+
+
+
+<script>
+	$(document).ready(function(){
+		$("#in").hide()
+		$("#tog").hide()
+		 $("#reguser").hide()
+		$("#b1").on("click", function() {
+			
+			let inp = document.getElementById("phn").value;
+			if(inp.length==10){
+				$('#vv1').addClass('spinner-border text-warning');
+				$("#b1").hide()
+			   
+				$.post("https://test.1ounce.in/connect/checkPhone/", { phone:inp } ,function(data){
+					$('#vv1').removeClass('spinner-border text-warning');
+				let res = data
+				if(res.code==2) {
+					$("#tog").show()
+				} else {
+					$("#tog").hide()
+				}
+
+				if(res.code==3){
+					$("#reguser").show()
+
+				} else {
+					$("#reguser").hide()
+				}
+				
+				
+        });
+			} else {
+				$("#in").show()
+			}
+		})
+	})
+</script>
+
+<script>
+	$("#cp").hide()
+</script>
+
+<script>
+	
+	function checkpass() {
+		$('#mn').addClass('spinner-border text-light');
+		let phn = document.getElementById("phn").value;
+		let pass = document.getElementById("regpass1").value;
+		
+		$.post("https://test.1ounce.in/connect/login/", { username:phn,password:pass } ,function(data,status){
+			$('#mn').removeClass('spinner-border text-light');
+           console.log(JSON.stringify(data));
+           if(status=="success") {
+			   document.getElementById("btn11").disabled = false;
+			   document.getElementById("username").value = `${data.username}`;
+			   document.getElementById("pincode").value = `${data.pincode}`;
+			   document.getElementById("area").value = `${data.area}`;
+			   document.getElementById("state").value = `${data.state}`;
+			   $(".signup_step1").hide();
+            	$(".signup_step2").show();
+				$(".hide").hide();
+				let inp = data.pincode
+				fetch(`https:/test.1ounce.in/common/pincode/${inp}/`)
+			.then(function(res){
+				
+			 return res.json()
+			})
+			.then(function(data){
+				
+			
+			let options="";
+			areas = data;
+			for(let i=0;i<areas.results.length;i++){
+			options += `<option value="${areas.results[i].id}">${areas.results[i].area}</option>`
+		   
+			}
+		   document.getElementById("area").innerHTML = options;
+		   
+
+			})
+				
+           }
+
+        }).fail(function(data) {
+			$('#mn').removeClass('spinner-border text-light');
+        	 console.log("error", data.status);
+        	  if(data.status==500) {
+			   $("#cp").show()
+			  
+		   }
+		   
+		   
+        })
+
+		
+	}
+	
+</script>
+
+
+
+<script>
+	$("#regpass1").focusin(function() {
+		$("#cp").hide()
+	})
+	$("#phn").focusin(function() {
+		$("#in").hide()
+	})
+	
+	
+</script>
+
+
+<script> 
+//input field id add which button clicking id
+	$("#regpass1").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#btn11").click();
+    }
+});
+
+$("#phn").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#b1").click();
+    }
+});
+
+$("#otp44").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#btn1").click();
+    }
+});
+
+ 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
