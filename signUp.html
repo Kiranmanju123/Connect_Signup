@@ -16,7 +16,7 @@
 </head>
 <body>
 	
-	<div class="container top" style="margin-top:2.3%;">
+	<div class="container top" style="margin-top:4%;">
 
 		<div class="row text-center">
 			
@@ -38,7 +38,8 @@
 				<img src="img/dot.png" class="img-fluid"> 
 				
 				<p style="margin-right:16%;" id="resph" class="res_1">Enter Phone Number</p> 				
-				<input type="text" id="phn" name="phone" class="inp_1" style="margin-top: -10px;"><span style="font-size: 8px; width: 15px; height: 15px; margin-left: -25px;" id="vv1"></span><br>
+				<input type="text" id="phn" name="phone" class="inp_1" style="margin-top: -10px;">
+				<span style="font-size: 8px; width: 15px; height: 15px; margin-left: -25px;" id="vv1"></span><br>
 				<p id="in" style="color: red; margin-left: 10px; display: none;">[Enter valid mobile number]</p>
 				<button id="b1" style="margin-top: 30px; outline : none !important; box-shadow: none; margin-left: 5%; padding-right: 20px;" type="button" class="btn btn-primary">Proceed </button>
 			<div id="otp1"> 
@@ -70,7 +71,7 @@
 				<button id="btn1" style="margin-top: 30px; margin-left: 5%;padding-right: 20px;" type="button" class="btn btn-primary">Proceed</button>
 			</div>
 	            <!-- <button id="btn1" style="margin-top: 50px;" type="button" class="btn btn-primary">Next</button> -->
-				<p style="margin-top: 5px; color: #AAA6BC;">Already Have an Account? <a style="color:#E9B640; " href="#"><b>Login</b></a></p>
+				<p style="margin-top: 5px; color: #AAA6BC;">Already Have an Account? <a style="color:#E9B640; " href="login.html"><b>Login</b></a></p>
 				
 			
 				</div>
@@ -102,7 +103,7 @@
 					<div class="col-md-6">
 						<span id="k3" style="color: #3B325F; margin-right: 50%;">Company Name</span>
 						<select type="text" name="company_name" id="company_name"  class="inp1_12">
-							<option>Choose</option>
+							
 							<option value="Freelancer">Freelancer</option>
 							<option value="Company">Company</option>
 						</select>
@@ -145,7 +146,7 @@
 				<div class="row hide" style="margin-top: 8px;">
 					<div class="col-md-6">
 						<span id="k7" style="color: #3B325F; margin-right: 69%;">Password</span>
-						<input type="password" name="password" id="pass1"   class="inp1_12">
+						<input type="password" name="password" id="pass1" class="inp1_12">
 						<h6 style="color: red; font-size: small; text-align: left;" id="p1err">[Should contain 8 char and 1 letter and one number and one special character]</h6>
 
 					</div>
@@ -275,6 +276,8 @@ function result(data){
 		   document.getElementById("area").innerHTML = options;
 		   document.getElementById("state").value = `${areas.results[0].state}`;
 		   document.getElementById("district").value = `${areas.results[0].district}`;
+		 
+
 
 
 			})
@@ -694,7 +697,7 @@ $("#otp44").keyup(function(event) {
 </script>
  -->
 
-<script>
+<!-- <script>
 	function finalData() {
 		let phone = document.getElementById("phn").value;
 		let profession = document.getElementById("profession").value;
@@ -755,6 +758,78 @@ $("#otp44").keyup(function(event) {
         })
 
 	}
+</script> -->
+
+<script>
+       function finalData() {
+	    let phone = document.getElementById("phn").value;
+		let profession = document.getElementById("profession").value;
+		let username = document.getElementById("username").value;
+		let email = document.getElementById("email").value;
+		let company_name = document.getElementById("company_name").value;
+		let address = document.getElementById("address").value;
+		let pincode = document.getElementById("pincode").value;
+		let pin_id = document.getElementById("area").value;
+		let password = document.getElementById("pass1").value;
+		let title = document.getElementById("title").value;
+		let work_description = document.getElementById("wrkdesp").value;
+		let profile_image = document.getElementById("profile_image").files[0];
+		let cover_image = document.getElementById("cover_image").files[0];
+		let work_proof = document.getElementById("work_proff").files[0];
+        
+        console.log(phone)
+		console.log(profession)
+		console.log(username)
+		console.log(email)
+		console.log(company_name)
+		console.log(address)
+		console.log(pincode)
+		console.log(pin_id)
+		console.log(password)
+		console.log(title)
+		console.log(work_description)
+		console.log(profile_image)
+		console.log(cover_image)
+		console.log(work_proof)
+
+		var form = new FormData()
+		form.append("phone",phone)
+		form.append("profession",profession)
+		form.append("username",username)
+		form.append("email",email)
+		form.append("company_name",company_name)
+		form.append("address",address)
+		form.append("pincode",pincode)
+		form.append("pin_id",pin_id)
+		form.append("password",password)
+		form.append("title",title)
+		form.append("work_description",work_description)
+		form.append("profile_image",profile_image)
+		form.append("cover_image",cover_image)
+		form.append("work_proof",work_proof)
+
+
+		$.ajax({
+			url:"https://test.1ounce.in/connect/signup/",
+			data:form,
+			type:"POST",
+			processData:false,
+			contentType:false,
+			success: function(response) {
+				console.log(response)
+				console.log("HELLO")
+			},
+			error: function(response) {
+                 alert("Fail")
+           }
+		})
+
+
+
+
+
+	}
+	
 </script>
 
 
