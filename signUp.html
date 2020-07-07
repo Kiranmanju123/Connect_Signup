@@ -39,25 +39,25 @@
 				
 				<p style="margin-right:16%;" id="resph" class="res_1">Enter Phone Number</p> 				
 				<input type="text" id="phn" name="phone" class="inp_1" style="margin-top: -10px;"><span style="font-size: 8px; width: 15px; height: 15px; margin-left: -25px;" id="vv1"></span><br>
-				<p id="in" style="color: red; margin-left: 10px;">[Enter valid mobile number]</p>
+				<p id="in" style="color: red; margin-left: 10px; display: none;">[Enter valid mobile number]</p>
 				<button id="b1" style="margin-top: 30px; outline : none !important; box-shadow: none; margin-left: 5%; padding-right: 20px;" type="button" class="btn btn-primary">Proceed </button>
 			<div id="otp1"> 
-				<button  id="tog" style="margin-top: 20px; background-color: #808080 !important; margin-left: 5%;  padding-right: 20px;" type="button" class="btn btn-primary">Send OTP</button>
-				<div id="reguser">
-					<p id="k" style="color: #3B325F; margin-top: 28px; padding-right:16%">Enter Your Password</p>
+				<button  id="tog" style="margin-top: 20px; background-color: #808080 !important; margin-left: 5%;  padding-right: 20px; display: none;" type="button" class="btn btn-primary">Send OTP</button>
+				<div id="reguser" style="display: none;">
+					<p id="k" style="color: #3B325F; margin-top: 28px; padding-right:16%;">Enter Your Password</p>
 					<input type="password" name="password" id="regpass1"  class="inp_1" style=" margin-top: -10px; margin-left: 25px;"> <br>
 					<p id="cp" style="color: red; text-align: center;">[Invalid credentials]</p>
-				    <button onclick="checkpass()" id="btn11" style="margin-top: 30px; outline : none !important; box-shadow: none;  margin-left: 5%; padding-right: 20px;" type="button" class="btn btn-primary">Proceed <span id="mn" style="font-size: 8px; width: 18px; height:18px;"></span></button>
+				    <button onclick="checkpass()" id="btn11" style="margin-top: 30px; outline : none !important; box-shadow: none;  margin-left: 5%; padding-right: 20px; " type="button" class="btn btn-primary">Proceed <span id="mn" style="font-size: 8px; width: 18px; height:18px;"></span></button>
 				</div>
 			</div> <br>
-			<div id="otp2">
-				<p id="del" style="padding-right:5%;" class="res_2">Enter OTP</p>
-				<div style="margin-left: 25px; margin-top: -10px;">
+			<div id="otp2" style="display: none;">
+				<p id="del" style="padding-right:5%; " class="res_2">Enter OTP</p>
+				<div style="margin-left: 25px; margin-top: -10px; ">
 				<input id="otp11" type="text"  maxlength="1" name="id1" class="inp_2 j">
 				<input id="otp22" type="text"  maxlength="1" name="id2" class="inp_2 j ">
 				<input id="otp33" type="text"  maxlength="1" name="id3" class="inp_2 j ">
 				<input id="otp44" type="text"  maxlength="1" name="id4" class="inp_2 j ">
-			</div>
+			   </div>
 			
 				<div id="un">
 				<p style="margin-top: 5px; color: #AAA6BC;"></p>Resending code in <span id="countdown"></span> sec</p>
@@ -101,9 +101,21 @@
 					</div>
 					<div class="col-md-6">
 						<span id="k3" style="color: #3B325F; margin-right: 50%;">Company Name</span>
-						<input type="text" name="company_name" id="company_name"  class="inp1_12">
+						<select type="text" name="company_name" id="company_name"  class="inp1_12">
+							<option>Choose</option>
+							<option value="Freelancer">Freelancer</option>
+							<option value="Company">Company</option>
+						</select>
 						<h6 style="color: red; font-size: small; text-align: left;" id="cerr">[Company name is required]</h6>
 					</div>
+				</div>
+
+				<div class="row" id="ml" style="margin-top: 8px; display: none;">
+					<div class="col-md-12">
+						<span id="k44" style="color: #3B325F; margin-right:77%;">Company Name</span>
+						<input type="text" name="cp" id="cpy"   class="inp1_12" >
+					</div>
+
 				</div>
 
 				<div class="row" style="margin-top: 8px;">
@@ -114,6 +126,7 @@
 					</div>
 					
 				</div>
+
 
 
 				<div class="row" style="margin-top: 8px;">
@@ -164,28 +177,28 @@
 					<div class="row" style="margin-top: 30px;">
 							<div class="col-md-6">
 								<span id="tt" style="color: #3B325F; margin-right:40%;">Add Title <span style="font-size: small;">(Optional)</span></span>
-									<input type="text" required name="title" class="inp1_12">
+									<input type="text" id="title" required name="title" class="inp1_12">
 							</div>
 							<div class="col-md-6">
 								<span style="color: #3B325F; margin-right:54%;">Profile image</span>
-								<input type="file" name="avatar"  class="inp1_12">
+								<input type="file" name="avatar" id="profile_image"  class="inp1_12">
 								<!-- <button class="nh" type="submit">Browse</button> -->
 							</div>
 					</div>
 
 					<div class="row" style="margin-top: 30px;">
-						<div class="col-md-6 z  ">
+						<div class="col-md-6 z">
 							<span style="color: #3B325F; margin-right:43%;">Work Description</span>
 							<!-- <input type="textarea" name="work_decp" id="wrkdesp" required  style="width: 95%; height: 80%;" class="inp1_12 "> -->
 							<textarea  name="work_decp" id="wrkdesp" required  style="width: 95%; height: 80%;" class="inp1_12 "></textarea>
 					    </div>
 					    <div class="col-md-6">
 							<span id="tt1" style="color: #3B325F; margin-right:31%;">Cover image <span style="font-size: small;">(Optional)</span></span>
-							<input type="file" name="cover_image"  class="inp1_12">
+							<input type="file" name="cover_image" id="cover_image"  class="inp1_12">
 							<!-- <button class="nh" type="submit">Browse</button> -->
 		                        <div style="margin-top: 10px;">
 									<span style="color: #3B325F; margin-right: 60%;">Work Proof</span>
-									<input type="file" name="work_proff"  class="inp1_12">
+									<input type="file" name="work_proff" id="work_proff"  class="inp1_12">
 									<!-- <button class="nh" type="submit">Browse</button> -->
 								</div>
 					   </div>
@@ -193,8 +206,9 @@
 					   <input style="display: none;" name="dis" type="text" id="district">
 
 					</div>
+
 				</form>
-				<button type="submit" class="btn btn-primary bplz" style="margin-top: 30px;">Next</button>
+				<button id="data" type="button" onclick="finalData()" class="btn btn-primary bplz" style="margin-top: 30px;">Next</button>
 				<p style="margin-top: 5px; color: #AAA6BC;">Already Have an Account? <a style="color:#E9B640; " href="#"><b>Login</b></a></p>
 				</div>
 
@@ -512,7 +526,8 @@ function result(data){
 
 <script>
 	$(document).ready(function(){
-		$("#in").hide()
+		//$("#in").css("display","none")
+		//$("#in").hide()
 		$("#tog").hide()
 		 $("#reguser").hide()
 		$("#b1").on("click", function() {
@@ -526,7 +541,7 @@ function result(data){
 					$('#vv1').removeClass('spinner-border text-warning');
 				let res = data
 				if(res.code==2) {
-					$("#tog").show()
+					$("#tog").css("display","inline")
 				} else {
 					$("#tog").hide()
 				}
@@ -541,7 +556,7 @@ function result(data){
 				
         });
 			} else {
-				$("#in").show()
+				$("#in").css("display","block")
 			}
 		})
 	})
@@ -645,12 +660,102 @@ $("#otp44").keyup(function(event) {
  
 </script>
 
+<script>
+	$('#company_name').on('change',function(){
+    if( $(this).val()==="Company"){
+    $("#ml").show()
+    }
+    else{
+    $("#ml").hide()
+    }
+});
+</script>
 
+<!-- <script>
+	$('#data').on('click',function(){
+		console.log("Heloo")
+		 let inp1 = document.getElementById("phn").value;
+		 let inp2 = document.getElementById("regpass1").value;
+			let inp3 = document.getElementById("profession").value;
+			let inp4 = document.getElementById("username").value;
+			let inp5 = document.getElementById("email").value;
+			let inp6 = document.getElementById("company_name").value;
+			let inp7 = document.getElementById("cpy").value;
+			let inp8 = document.getElementById("pincode").value;
+			let inp9 = document.getElementById("state").value;
+			let inp10 = document.getElementById("pass1").value;
+			let inp11 = document.getElementById("pass2").value;
+			let inp12 = document.getElementById("area").value;
+			let inp13= document.getElementById("area").value; 
+			let inp14 = document.getElementById("work_proff").value;
 
+		console.log(inp1,inp2,inp3,inp4,inp5,inp6,inp7,inp8,inp9,inp10,inp11,inp12,inp13,inp14)
+	})
+</script>
+ -->
 
+<script>
+	function finalData() {
+		let phone = document.getElementById("phn").value;
+		let profession = document.getElementById("profession").value;
+		let username = document.getElementById("username").value;
+		let email = document.getElementById("email").value;
+		let company_name = document.getElementById("company_name").value;
+		let address = document.getElementById("address").value;
+		let pincode = document.getElementById("pincode").value;
+		let pin_id = document.getElementById("regpass1").value;
+		let password = document.getElementById("pass1").value;
+		let title = document.getElementById("title").value;
+		let work_description = document.getElementById("wrkdesp").value;
+		let profile_image = document.getElementById("profile_image").value;
+		let cover_image = document.getElementById("cover_image").value;
+		let work_proof = document.getElementById("work_proff").value;
 
+		$.post("https://test.1ounce.in/connect/signup/", 
+			{ 
+			   phone:phone,
+			  profession:profession,
+			  username:username,
+			  email:email,
+			  company_name:company_name,
+			  address:address,
+			  pincode:pincode,
+			  pin_id:pincode,
+			  password:password,
+			  title:title,
+			  work_description:work_description,
+			  profile_image:profile_image,
+			  cover_image:cover_image,
+			  work_proof:work_proof,
 
+			} 
+        ,function(data,status){
 
+        	 if(status=="success") {
+        	 	alert("SUCCESS")
+        	 	console.log("phone : "+" "+ phone)
+        	 	console.log("profession : "+" "+ profession)
+        	 	console.log("username : "+" "+ username)
+        	 	console.log("email : "+" "+ email)
+        	 	console.log("company_name : "+" "+ company_name)
+        	 	console.log("address : "+" "+ address)
+        	 	console.log("pincode : "+" "+ pincode)
+        	 	console.log("pin_id : "+" "+ pin_id)
+        	 	console.log("password : "+" "+ password)
+        	 	console.log("title : "+" "+ title)
+                console.log("work_description : "+" "+ work_description)
+        	 	console.log("profile_image : "+" "+ profile_image)
+        	 	console.log("cover_image : "+" "+ cover_image)
+        	 	console.log("work_proof : "+" "+ work_proof)
+        	  	
+        	 }
+
+		}).fail(function(data) {
+			console.log("ERROR") 
+        })
+
+	}
+</script>
 
 
 
