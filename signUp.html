@@ -104,8 +104,8 @@
 						<span id="k3" style="color: #3B325F; margin-right: 50%;">Company Name</span>
 						<select type="text" name="company_name" id="company_name"  class="inp1_12">
 							
-							<option value="Freelancer">Freelancer</option>
-							<option value="Company">Company</option>
+							<option value="1">Freelancer</option>
+							<option value="0">Company</option>
 						</select>
 						<h6 style="color: red; font-size: small; text-align: left;" id="cerr">[Company name is required]</h6>
 					</div>
@@ -114,7 +114,7 @@
 				<div class="row" id="ml" style="margin-top: 8px; display: none;">
 					<div class="col-md-12">
 						<span id="k44" style="color: #3B325F; margin-right:77%;">Company Name</span>
-						<input type="text" name="cp" id="cpy"   class="inp1_12" >
+						<input type="text" name="cpp" id="company_name"   class="inp1_12" >
 					</div>
 
 				</div>
@@ -665,7 +665,7 @@ $("#otp44").keyup(function(event) {
 
 <script>
 	$('#company_name').on('change',function(){
-    if( $(this).val()==="Company"){
+    if($(this).val()==="0"){
     $("#ml").show()
     }
     else{
@@ -674,91 +674,7 @@ $("#otp44").keyup(function(event) {
 });
 </script>
 
-<!-- <script>
-	$('#data').on('click',function(){
-		console.log("Heloo")
-		 let inp1 = document.getElementById("phn").value;
-		 let inp2 = document.getElementById("regpass1").value;
-			let inp3 = document.getElementById("profession").value;
-			let inp4 = document.getElementById("username").value;
-			let inp5 = document.getElementById("email").value;
-			let inp6 = document.getElementById("company_name").value;
-			let inp7 = document.getElementById("cpy").value;
-			let inp8 = document.getElementById("pincode").value;
-			let inp9 = document.getElementById("state").value;
-			let inp10 = document.getElementById("pass1").value;
-			let inp11 = document.getElementById("pass2").value;
-			let inp12 = document.getElementById("area").value;
-			let inp13= document.getElementById("area").value; 
-			let inp14 = document.getElementById("work_proff").value;
 
-		console.log(inp1,inp2,inp3,inp4,inp5,inp6,inp7,inp8,inp9,inp10,inp11,inp12,inp13,inp14)
-	})
-</script>
- -->
-
-<!-- <script>
-	function finalData() {
-		let phone = document.getElementById("phn").value;
-		let profession = document.getElementById("profession").value;
-		let username = document.getElementById("username").value;
-		let email = document.getElementById("email").value;
-		let company_name = document.getElementById("company_name").value;
-		let address = document.getElementById("address").value;
-		let pincode = document.getElementById("pincode").value;
-		let pin_id = document.getElementById("regpass1").value;
-		let password = document.getElementById("pass1").value;
-		let title = document.getElementById("title").value;
-		let work_description = document.getElementById("wrkdesp").value;
-		let profile_image = document.getElementById("profile_image").value;
-		let cover_image = document.getElementById("cover_image").value;
-		let work_proof = document.getElementById("work_proff").value;
-
-		$.post("https://test.1ounce.in/connect/signup/", 
-			{ 
-			   phone:phone,
-			  profession:profession,
-			  username:username,
-			  email:email,
-			  company_name:company_name,
-			  address:address,
-			  pincode:pincode,
-			  pin_id:pincode,
-			  password:password,
-			  title:title,
-			  work_description:work_description,
-			  profile_image:profile_image,
-			  cover_image:cover_image,
-			  work_proof:work_proof,
-
-			} 
-        ,function(data,status){
-
-        	 if(status=="success") {
-        	 	alert("SUCCESS")
-        	 	console.log("phone : "+" "+ phone)
-        	 	console.log("profession : "+" "+ profession)
-        	 	console.log("username : "+" "+ username)
-        	 	console.log("email : "+" "+ email)
-        	 	console.log("company_name : "+" "+ company_name)
-        	 	console.log("address : "+" "+ address)
-        	 	console.log("pincode : "+" "+ pincode)
-        	 	console.log("pin_id : "+" "+ pin_id)
-        	 	console.log("password : "+" "+ password)
-        	 	console.log("title : "+" "+ title)
-                console.log("work_description : "+" "+ work_description)
-        	 	console.log("profile_image : "+" "+ profile_image)
-        	 	console.log("cover_image : "+" "+ cover_image)
-        	 	console.log("work_proof : "+" "+ work_proof)
-        	  	
-        	 }
-
-		}).fail(function(data) {
-			console.log("ERROR") 
-        })
-
-	}
-</script> -->
 
 <script>
        function finalData() {
@@ -817,7 +733,7 @@ $("#otp44").keyup(function(event) {
 			contentType:false,
 			success: function(response) {
 				console.log(response)
-				console.log("HELLO")
+				console.log("Done with Post")
 			},
 			error: function(response) {
                  alert("Fail")
