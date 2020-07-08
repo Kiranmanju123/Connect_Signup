@@ -230,7 +230,8 @@
 
 
 <script>
-fetch("https://test.1ounce.in/connect/professionapi/")
+const ip="https://test.1ounce.in/";
+fetch(`${ip}connect/professionapi/`)
 .then(function(res){
 return res.json()
 })
@@ -255,11 +256,13 @@ function result(data){
 
 <script>
 	$(document).ready(function() {
+    const ip="https://test.1ounce.in/";
+
 		$("#pincode").on("input", function() {
 		   let inp= $("#pincode").val()
 		   if(inp.length==6) {
 			$('#vv').addClass('spinner-border text-warning');
-			fetch(`https:/test.1ounce.in/common/pincode/${inp}/`)
+			fetch(`${ip}common/pincode/${inp}/`)
 			.then(function(res){
 				$('#vv').removeClass('spinner-border text-warning');
 			 return res.json()
@@ -529,8 +532,7 @@ function result(data){
 
 <script>
 	$(document).ready(function(){
-		//$("#in").css("display","none")
-		//$("#in").hide()
+        const ip="https://test.1ounce.in/";
 		$("#tog").hide()
 		 $("#reguser").hide()
 		$("#b1").on("click", function() {
@@ -540,7 +542,7 @@ function result(data){
 				$('#vv1').addClass('spinner-border text-warning');
 				$("#b1").hide()
 			   
-				$.post("https://test.1ounce.in/connect/checkPhone/", { phone:inp } ,function(data){
+				$.post(`${ip}connect/checkPhone/`, { phone:inp } ,function(data){
 					$('#vv1').removeClass('spinner-border text-warning');
 				let res = data
 				if(res.code==2) {
@@ -572,11 +574,12 @@ function result(data){
 <script>
 	
 	function checkpass() {
+        const ip="https://test.1ounce.in/";
 		$('#mn').addClass('spinner-border text-light');
 		let phn = document.getElementById("phn").value;
 		let pass = document.getElementById("regpass1").value;
 		
-		$.post("https://test.1ounce.in/connect/login/", { username:phn,password:pass } ,function(data,status){
+		$.post(`${ip}connect/login/`, { username:phn,password:pass } ,function(data,status){
 			$('#mn').removeClass('spinner-border text-light');
            console.log(JSON.stringify(data));
            if(status=="success") {
@@ -589,7 +592,7 @@ function result(data){
             	$(".signup_step2").show();
 				$(".hide").hide();
 				let inp = data.pincode
-				fetch(`https:/test.1ounce.in/common/pincode/${inp}/`)
+				fetch(`${ip}common/pincode/${inp}/`)
 			.then(function(res){
 				
 			 return res.json()
@@ -678,6 +681,7 @@ $("#otp44").keyup(function(event) {
 
 <script>
        function finalData() {
+        const ip="https://test.1ounce.in/";
 	    let phone = document.getElementById("phn").value;
 		let profession = document.getElementById("profession").value;
 		let username = document.getElementById("username").value;
@@ -726,7 +730,7 @@ $("#otp44").keyup(function(event) {
 
 
 		$.ajax({
-			url:"https://test.1ounce.in/connect/signup/",
+			url:`${ip}connect/signup/`,
 			data:form,
 			type:"POST",
 			processData:false,
