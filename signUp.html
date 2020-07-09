@@ -54,10 +54,10 @@
 			<div id="otp_field" style="display: none;">
 				<p id="del" style="padding-right:5%; " class="res_2">Enter OTP</p>
 				<div style="margin-left: 25px; margin-top: -10px; ">
-				<input id="otp1" type="text"  maxlength="1" name="id1" class="inp_2 j">
-				<input id="otp2" type="text"  maxlength="1" name="id2" class="inp_2 j ">
-				<input id="otp3" type="text"  maxlength="1" name="id3" class="inp_2 j ">
-				<input id="otp4" type="text"  maxlength="1" name="id4" class="inp_2 j ">
+				<input id="otp1" type="text"  maxlength="1" name="id1" class="inp_2 otp_focus">
+				<input id="otp2" type="text"  maxlength="1" name="id2" class="inp_2 otp_focus ">
+				<input id="otp3" type="text"  maxlength="1" name="id3" class="inp_2 otp_focus ">
+				<input id="otp4" type="text"  maxlength="1" name="id4" class="inp_2 otp_focus ">
 			   </div>
 			
 				<div id="un">
@@ -229,13 +229,24 @@
 	</div>
 
 
+<script>
+	$(document).ready(function() {
+	
+	$(".otp_focus").on("keypress", function(e){
+    $(this).next().trigger("focus");
+	
+  
+  
+})
 
+	})
+</script>
 
 
 
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/validation.js"></script>
-<script type="text/javascript" src="js/submitData.js"></script>
+<!-- <script type="text/javascript" src="js/submitData.js"></script> -->
 <script type="text/javascript" src="js/signup.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
